@@ -1,0 +1,20 @@
+gcloud container clusters get-credentials cluster-1 --zone us-central1-c --project microservice-331221
+kubectl get configmap
+kubectl apply -f 1_configmaps.yml
+kubectl get configmap
+kubectl delete configmap eazybank1-configmap
+kubectl apply -f 2_zipkin.yml
+kubectl get deployments 
+kubectl get services
+kubectl get replicaset
+kubectl delete pod name
+new changes on application
+kubectl scale deployment accounts-deployment --replicas=4
+kubectl describe pod name
+kubectl set image deployment accounts-deployment accounts=eazybytes/accounts:k8s
+kubectl get events --sort-by=.metadata.creationTimestamp
+kubectl rollout history deployment accounts-deployment
+kubectl rollout undo deployment accounts-deployment --to-revision=1
+kubectl logs eurekaserver-deployment-6d5444fd6f-jlmck
+kubectl get hpa
+kubectl autoscale deployment accounts-deployment --min=3 --max=10 --cpu-percent=70
